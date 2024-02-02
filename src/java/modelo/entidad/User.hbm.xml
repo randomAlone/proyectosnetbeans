@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated ene 27, 2024 4:44:17 p.m. by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.entidad.User" table="user" catalog="usuarios" optimistic-lock="version">
+        <id name="iduser" type="java.lang.Integer">
+            <column name="iduser" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="clave" type="string">
+            <column name="clave" length="500" not-null="true" />
+        </property>
+        <property name="roll" type="string">
+            <column name="roll" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

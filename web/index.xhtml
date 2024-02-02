@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form {
+            margin-top: 20px;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .login-form button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <h:form>
+            <div class="login-form">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel for="username" value="Usuario:" />
+                    <p:inputText id="username" value="#{loginControl.usuario.nombre}" />
+
+                    <h:outputLabel for="password" value="Contraseña:" />
+                    <p:password id="password" value="#{loginControl.usuario.clave}" />
+
+                    <h:panelGroup /> <!-- Espacio en blanco -->
+
+                    <h:panelGroup>
+                        <p:commandButton value="Iniciar Sesión" action="#{loginControl.login()}" />
+                    </h:panelGroup>
+                </h:panelGrid>
+            </div>
+        </h:form>
+    </div>
+</h:body>
+
+</html>

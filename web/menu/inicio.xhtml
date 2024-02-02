@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Menú Retro</title>
+    <style>
+        body {
+            background-color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+        }
+
+        .menu {
+            background-color: #555;
+            overflow: hidden;
+        }
+
+        .menu a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            background-color: #777;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .retro-style {
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .logout-button {
+            background-color: #ff3333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .logout-button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <div class="header">
+        Menú
+    </div>
+    <div class="menu">
+        <a href="#">Inicio</a>
+        <a href="#">Contacto</a>
+        <a href="#">Acerca de</a>
+        <h:form>
+            <p:commandButton value="Cerrar Sesión" action="#{loginControl.cerrarSession()}" styleClass="logout-button"/>
+        </h:form>
+    </div>
+    <div class="content">
+        <div class="retro-style">
+            <h:outputText value="Contenido retro aquí..." />
+        </div>
+    </div>
+</h:body>
+
+</html>
